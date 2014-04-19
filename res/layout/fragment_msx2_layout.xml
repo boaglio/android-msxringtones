@@ -1,0 +1,295 @@
+ <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" 
+    android:layout_height="wrap_content">
+	 	
+  	
+  <TableLayout 
+    android:scrollbars="horizontal|vertical"
+    android:id="@+id/tabela_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:stretchColumns="1"  >
+    
+    <TableRow android:layout_gravity="center" >
+        <TextView
+        android:id="@+id/texto_nada1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nada" />
+    </TableRow>       
+
+    
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_aleste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_aleste" />
+    <ImageButton
+        android:id="@+id/botao_play_aleste"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+    <Button
+        android:id="@+id/botao_use_ringtone_aleste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+    
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_firehawk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_firehawk" />
+    <ImageButton
+        android:id="@+id/botao_play_firehawk"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+    <Button
+        android:id="@+id/botao_use_ringtone_firehawk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_fray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_fray" />
+     <ImageButton
+        android:id="@+id/botao_play_fray"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+     <Button
+        android:id="@+id/botao_use_ringtone_fray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+    
+    <TableRow>
+    <TextView
+        android:id="@+id/texto_golvellius1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_golvellius1" />
+
+    <ImageButton
+        android:id="@+id/botao_play_golvellius1"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+
+    <Button
+        android:id="@+id/botao_use_ringtone_golvellius1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+
+    </TableRow>
+    
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_golvellius2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_golvellius2" />
+     <ImageButton
+        android:id="@+id/botao_play_golvellius2"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+     <Button
+        android:id="@+id/botao_use_ringtone_golvellius2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+    
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_higemaru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_higemaru" />
+     <ImageButton
+        android:id="@+id/botao_play_higemaru"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+     <Button
+        android:id="@+id/botao_use_ringtone_higemaru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+    
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_metalgear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_metalgear" />
+     <ImageButton
+        android:id="@+id/botao_play_metalgear"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+     <Button
+        android:id="@+id/botao_use_ringtone_metalgear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_metalgear2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_metalgear2" />
+     <ImageButton
+        android:id="@+id/botao_play_metalgear2"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+     <Button
+        android:id="@+id/botao_use_ringtone_metalgear2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+    
+        
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_psychoworld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_psychoworld" />
+     <ImageButton
+        android:id="@+id/botao_play_psychoworld"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+     <Button
+        android:id="@+id/botao_use_ringtone_psychoworld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+    
+    
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_sdsnatcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_sdsnatcher" />
+     <ImageButton
+        android:id="@+id/botao_play_sdsnatcher"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+     <Button
+        android:id="@+id/botao_use_ringtone_sdsnatcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+        
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_undeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_undeadline" />
+      <ImageButton
+        android:id="@+id/botao_play_undeadline"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+      <Button
+        android:id="@+id/botao_use_ringtone_undeadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_usas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_usas" />
+      <ImageButton
+        android:id="@+id/botao_play_usas"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+      <Button
+        android:id="@+id/botao_use_ringtone_usas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+            
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_vampire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_vampire" />
+      <ImageButton
+        android:id="@+id/botao_play_vampire"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+      <Button
+        android:id="@+id/botao_use_ringtone_vampire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+    
+    <TableRow>
+     <TextView
+        android:id="@+id/texto_xak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/jogo_xak" />
+      <ImageButton
+        android:id="@+id/botao_play_xak"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play"
+        android:src="@drawable/msxmusic" />
+      <Button
+        android:id="@+id/botao_use_ringtone_xak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/set_ringtone" />
+    </TableRow>
+    
+  </TableLayout>
+	 
+</ScrollView>

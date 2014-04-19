@@ -1,0 +1,29 @@
+<com.olimposystems.android.DashboardLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_weight="1"
+    android:background="#f8f9fe" >
+	<!--  MSX1 -->
+    <Button
+        android:id="@+id/btn_msx1"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_msx1"
+        android:text="@string/msx1" />
+    
+	<!--  MSX2 -->
+    <Button
+        android:id="@+id/botao_msx2"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_msx2"
+        android:text="@string/msx2" />
+    
+    <!--  Exit -->
+    <Button
+        android:id="@+id/botao_saida"
+        style="@style/DashboardButton"
+        android:drawableTop="@drawable/btn_exit"
+        android:text="@string/sair" />
+	 
+
+</com.olimposystems.android.DashboardLayout>
