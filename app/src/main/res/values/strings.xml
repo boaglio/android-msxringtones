@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="titulo"> MSX ringtones !</string>
+    <string name="app_name">MSX ringtones</string>
+    <string name="versao">release 1.3</string>
+    <string name="creditos">Developed by </string>
+    <string name="comments">Any comments ? please let us now</string>
+    <string name="rodape">PSG and FM-PAC for your ears</string>
+    <string name="nada"> </string>
+    <string name="play">play</string>
+    <string name="msx1">MSX1 games</string>
+    <string name="msx2">MSX2 games</string>
+    <string name="sobre">About</string>
+    <string name="sair">Exit</string>
+    <string name="set_ringtone">Use this ringtone</string>
+    <string name="goodbye">Goodbye! Come back soon!</string>
+    
+    <string name="jogo_antartic">Antartic Adventure</string>
+    <string name="jogo_goonies">Goonies</string>
+    <string name="jogo_guardic">Guardic</string>
+    <string name="jogo_jetbomber">Jet Bomber</string>
+    <string name="jogo_kingsv">King\'s Valley</string>
+    <string name="jogo_magicaltree">Magical Tree</string>
+    <string name="jogo_nemesis2">Nemesis 2</string>
+    <string name="jogo_outrun">OutRun</string>
+    <string name="jogo_pacmania">PacMania</string>
+    <string name="jogo_pippols">Pippols</string>
+    <string name="jogo_starwars">Star Wars</string>
+    <string name="jogo_zanac">Zanac</string>
+    
+    <string name="jogo_aleste">Aleste</string>    
+    <string name="jogo_firehawk">Fire Hawk</string>
+    <string name="jogo_fray">Fray</string>
+    <string name="jogo_golvellius1">Golvellius(1)</string>
+    <string name="jogo_golvellius2">Golvellius(2)</string>
+    <string name="jogo_higemaru">Higemaru</string>
+    <string name="jogo_metalgear">Metal Gear(1)</string>
+    <string name="jogo_metalgear2">Metal Gear(2)</string>
+    <string name="jogo_psychoworld">Psycho World</string>
+    <string name="jogo_sdsnatcher">SD Snatcher</string>
+    <string name="jogo_usas">Treasure of USAS</string>
+    <string name="jogo_undeadline">Undeadline</string>
+    <string name="jogo_vampire">Vampire Killer</string>
+    <string name="jogo_xak">Xak</string>
+</resources>
