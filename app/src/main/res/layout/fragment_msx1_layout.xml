@@ -39,11 +39,11 @@
     </TableRow>
     
     <TableRow>
-     <TextView
-        android:id="@+id/texto_goonies"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/jogo_goonies" />
+      <ImageView
+            android:id="@+id/texto_goonies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/goonies" />
      <ImageButton
         android:id="@+id/botao_play_goonies"
          android:layout_width="wrap_content"
@@ -79,31 +79,11 @@
     </TableRow>    
 
     <TableRow>
-     <TextView
-        android:id="@+id/texto_jetbomber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/jogo_jetbomber" />
-     <ImageButton
-        android:id="@+id/botao_play_jetbomber"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:background="@color/black"
-         android:src="@drawable/speaker_logo" />
-     <ImageButton
-        android:id="@+id/botao_use_ringtone_jetbomber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:background="@color/black"
-        android:src="@drawable/checkmark" />
-    </TableRow>    
-  
-    <TableRow>
-     <TextView
-        android:id="@+id/texto_kingsv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/jogo_kingsv" />
+     <ImageView
+            android:id="@+id/texto_kingsv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/kingsvalley" />
      <ImageButton
         android:id="@+id/botao_play_kingsv"
          android:layout_width="wrap_content"
@@ -119,32 +99,11 @@
     </TableRow>
 
     <TableRow>
-     <TextView
-        android:id="@+id/texto_magicaltree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/jogo_magicaltree" />
-     <ImageButton
-        android:id="@+id/botao_play_magicaltree"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:background="@color/black"
-         android:src="@drawable/speaker_logo" />
-     <ImageButton
-        android:id="@+id/botao_use_ringtone_magicaltree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:background="@color/black"
-        android:src="@drawable/checkmark" />
-    </TableRow>    
-
-        
-    <TableRow>
-     <TextView
+     <ImageView
         android:id="@+id/texto_nemesis2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/jogo_nemesis2" />
+        android:src="@drawable/gradius2" />
      <ImageButton
         android:id="@+id/botao_play_nemesis2"
          android:layout_width="wrap_content"
@@ -158,33 +117,13 @@
          android:background="@color/black"
         android:src="@drawable/checkmark" />
     </TableRow>
-    
+
     <TableRow>
-     <TextView
-        android:id="@+id/texto_outrun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/jogo_outrun" />
-     <ImageButton
-        android:id="@+id/botao_play_outrun"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:background="@color/black"
-         android:src="@drawable/speaker_logo" />
-     <ImageButton
-        android:id="@+id/botao_use_ringtone_outrun"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-         android:background="@color/black"
-        android:src="@drawable/checkmark" />
-    </TableRow>   
-    
-    <TableRow>
-     <TextView
+     <ImageView
         android:id="@+id/texto_pacmania"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/jogo_pacmania" />
+        android:src="@drawable/pacmania" />
      <ImageButton
         android:id="@+id/botao_play_pacmania"
          android:layout_width="wrap_content"
@@ -200,11 +139,11 @@
     </TableRow>    
     
     <TableRow>
-     <TextView
+     <ImageView
         android:id="@+id/texto_pippols"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/jogo_pippols" />
+        android:src="@drawable/pippols" />
      <ImageButton
         android:id="@+id/botao_play_pippols"
          android:layout_width="wrap_content"
@@ -220,19 +159,19 @@
     </TableRow>
      
     <TableRow>
-     <TextView
-        android:id="@+id/texto_starwars"
+     <ImageView
+        android:id="@+id/texto_salamander"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/jogo_starwars" />
+        android:src="@drawable/salamander" />
      <ImageButton
-        android:id="@+id/botao_play_starwars"
+        android:id="@+id/botao_play_salamander"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:background="@color/black"
          android:src="@drawable/speaker_logo" />
      <ImageButton
-        android:id="@+id/botao_use_ringtone_starwars"
+        android:id="@+id/botao_use_ringtone_salamander"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
          android:background="@color/black"
@@ -240,11 +179,11 @@
     </TableRow>  
     
     <TableRow>
-     <TextView
+     <ImageView
         android:id="@+id/texto_zanac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/jogo_zanac" />
+        android:src="@drawable/zanac" />
      <ImageButton
         android:id="@+id/botao_play_zanac"
          android:layout_width="wrap_content"

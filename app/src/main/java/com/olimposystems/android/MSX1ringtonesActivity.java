@@ -48,30 +48,21 @@ public class MSX1ringtonesActivity extends Activity {
         // guardic
 		registraBotaoImagem("Guardic",R.id.botao_play_guardic,R.id.botao_use_ringtone_guardic,R.raw.guardic);
 
-        // jetbomber
-		registraBotaoImagem("Jet Bomber",R.id.botao_play_jetbomber,R.id.botao_use_ringtone_jetbomber,R.raw.jetbomber);
-        
         // king's valley
 		registraBotaoImagem("King's Valley",R.id.botao_play_kingsv,R.id.botao_use_ringtone_kings,R.raw.kingsvalley);
 
-        // Magical Tree
-		registraBotaoImagem("Magical Tree",R.id.botao_play_magicaltree,R.id.botao_use_ringtone_magicaltree,R.raw.magicaltree);
-        
-        // Outrun
-		registraBotaoImagem("Outrun",R.id.botao_play_outrun,R.id.botao_use_ringtone_outrun,R.raw.outrun);
-
         // Nemesis 2
-		registraBotaoImagem("Nemesis 2",R.id.botao_play_nemesis2,R.id.botao_use_ringtone_nemesis2,R.raw.nemesis2);
-        
-        // pacmania
+		registraBotaoImagem("Nemesis 2",R.id.botao_play_nemesis2,R.id.botao_use_ringtone_nemesis2,R.raw.gradius2);
+
+		// Salamander
+		registraBotaoImagem("Salamander",R.id.botao_play_salamander,R.id.botao_use_ringtone_salamander,R.raw.salamander);
+
+		// pacmania
 		registraBotaoImagem("Pacmania",R.id.botao_play_pacmania,R.id.botao_use_ringtone_pacmania,R.raw.pacmania);
 
         // pippols
 		registraBotaoImagem("Pippols",R.id.botao_play_pippols,R.id.botao_use_ringtone_pippols,R.raw.pippols);
 
-        // star wars
-		registraBotaoImagem("Star Wars",R.id.botao_play_starwars,R.id.botao_use_ringtone_starwars,R.raw.starwars);
-        
 		// zanac
 		registraBotaoImagem("Zanac",R.id.botao_play_zanac,R.id.botao_use_ringtone_zanac,R.raw.zanac);
         

@@ -124,13 +124,9 @@ public class RingtoneUtil {
 			break;
 
 		case R.id.botao_use_ringtone_golvellius1:
-			saveas(R.raw.golvellius1, "golvellius1", AUDIO_OGG, activity);
+			saveas(R.raw.golvellius, "golvellius", AUDIO_OGG, activity);
 			break;
 			
-		case R.id.botao_use_ringtone_golvellius2:
-			saveas(R.raw.golvellius2, "golvellius2", AUDIO_OGG, activity);
-			break;
-
 		case R.id.botao_use_ringtone_goonies:
 			saveas(R.raw.goonies, "goonies", AUDIO_OGG, activity);
 			break;
@@ -139,36 +135,21 @@ public class RingtoneUtil {
 			saveas(R.raw.guardic, "guardic", AUDIO_OGG, activity);
 			break;
 			
-		case R.id.botao_use_ringtone_higemaru:
-			saveas(R.raw.higemaru, "higemaru", AUDIO_OGG, activity);
-			break;
-			
-		case R.id.botao_use_ringtone_jetbomber:
-			saveas(R.raw.jetbomber, "jetbomber", AUDIO_OGG, activity);
+
+		case R.id.botao_use_ringtone_salamander:
+			saveas(R.raw.salamander, "salamander", AUDIO_OGG, activity);
 			break;
 			
 		case R.id.botao_use_ringtone_kings:
 			saveas(R.raw.kingsvalley, "kings1", AUDIO_OGG, activity);
 			break;
 
-		case R.id.botao_use_ringtone_magicaltree:
-			saveas(R.raw.magicaltree, "magicaltree", AUDIO_OGG, activity);
-			break;
-			
 		case R.id.botao_use_ringtone_metalgear:
 			saveas(R.raw.metalgear1, "metalgear1", AUDIO_OGG, activity);
 			break;
 
-		case R.id.botao_use_ringtone_metalgear2:
-			saveas(R.raw.metalgear1b, "metalgear2", AUDIO_OGG, activity);
-			break;
-
 		case R.id.botao_use_ringtone_nemesis2:
-			saveas(R.raw.nemesis2, "nemesis2", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_outrun:
-			saveas(R.raw.outrun, "outrun", AUDIO_OGG, activity);
+			saveas(R.raw.gradius2, "nemesis2", AUDIO_OGG, activity);
 			break;
 
 		case R.id.botao_use_ringtone_pacmania:
@@ -178,33 +159,13 @@ public class RingtoneUtil {
 		case R.id.botao_use_ringtone_pippols:
 			saveas(R.raw.pippols, "pippols", AUDIO_OGG, activity);
 			break;
-			
-		case R.id.botao_use_ringtone_psychoworld:
-			saveas(R.raw.psychoworld, "psychoworld", AUDIO_OGG, activity);
-			break;
-			
+
 		case R.id.botao_use_ringtone_sdsnatcher:
 			saveas(R.raw.sdsnatcher, "sdsnatcher", AUDIO_OGG, activity);
 			break;
 
-		case R.id.botao_use_ringtone_starwars:
-			saveas(R.raw.starwars, "starwars", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_undeadline:
-			saveas(R.raw.undeadline, "undeadline", AUDIO_OGG, activity);
-			break;
-
 		case R.id.botao_use_ringtone_usas:
 			saveas(R.raw.usas, "usas", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_vampire:
-			saveas(R.raw.vampire, "vampire", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_xak:
-			saveas(R.raw.xak, "xak", AUDIO_OGG, activity);
 			break;
 
 		case R.id.botao_use_ringtone_zanac:

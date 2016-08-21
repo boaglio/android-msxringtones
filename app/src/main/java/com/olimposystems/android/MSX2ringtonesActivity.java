@@ -36,34 +36,17 @@ public class MSX2ringtonesActivity extends Activity {
         registraBotao("Fray",R.id.botao_play_fray,R.id.botao_use_ringtone_fray,R.raw.fray); 
 
         // Golvellius
-        registraBotao("Golvellius(1)",R.id.botao_play_golvellius1,R.id.botao_use_ringtone_golvellius1,R.raw.golvellius1); 
-        registraBotao("Golvellius(2)",R.id.botao_play_golvellius2,R.id.botao_use_ringtone_golvellius2,R.raw.golvellius2); 
-        
-		// Higemaru
-        registraBotao("Higemaru",R.id.botao_play_higemaru,R.id.botao_use_ringtone_higemaru,R.raw.higemaru); 
+        registraBotao("Golvellius",R.id.botao_play_golvellius1,R.id.botao_use_ringtone_golvellius1,R.raw.golvellius);
 
         // Metal Gear
-        registraBotao("Metal Gear(1)",R.id.botao_play_metalgear,R.id.botao_use_ringtone_metalgear,R.raw.metalgear1); 
-        registraBotao("Metal Gear(2)",R.id.botao_play_metalgear2,R.id.botao_use_ringtone_metalgear2,R.raw.metalgear1b); 
-        
-        // Psycho World
-        registraBotao("Psycho World",R.id.botao_play_psychoworld,R.id.botao_use_ringtone_psychoworld,R.raw.psychoworld); 
-        
+        registraBotao("Metal Gear",R.id.botao_play_metalgear,R.id.botao_use_ringtone_metalgear,R.raw.metalgear1);
+
         // SD Snatcher
         registraBotao("SD Snatcher",R.id.botao_play_sdsnatcher,R.id.botao_use_ringtone_sdsnatcher,R.raw.sdsnatcher); 
 
         // Treasure of USAS
         registraBotao("Treasure of USAS",R.id.botao_play_usas,R.id.botao_use_ringtone_usas,R.raw.usas); 
-        
-        // Undeadline
-        registraBotao("Undeadline",R.id.botao_play_undeadline,R.id.botao_use_ringtone_undeadline,R.raw.undeadline); 
-        
-        // Vampire Killer
-        registraBotao("Vampire Killer",R.id.botao_play_vampire,R.id.botao_use_ringtone_vampire,R.raw.vampire); 
 
-		// xak
-        registraBotao("Xak",R.id.botao_play_xak,R.id.botao_use_ringtone_xak,R.raw.xak); 
-        
 		Log.i(CATEGORIA, "tela MSX2 ok");
 		
     }
@@ -71,7 +54,7 @@ public class MSX2ringtonesActivity extends Activity {
     private void registraBotao(final String nome,int botaoPlayId, final int botaoRingtoneId,final int arquivoId) {
     	
 		ImageButton botaoImagem = (ImageButton) findViewById(botaoPlayId);
-		botaoImagem.setImageResource(R.drawable.msxmusic);
+		botaoImagem.setImageResource(R.drawable.speaker_logo);
 		botaoImagem.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				
@@ -85,9 +68,9 @@ public class MSX2ringtonesActivity extends Activity {
 				Toast.makeText(MSX2ringtonesActivity.this, "playing "+nome+" ringtone...", Toast.LENGTH_SHORT).show();
 			}
 		});
-		
 
-		Button botao = (Button) findViewById(botaoRingtoneId);
+
+		ImageButton botao = (ImageButton) findViewById(botaoRingtoneId);
 		botao.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				
