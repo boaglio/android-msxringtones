@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.olimposystems.android.type.MSX1Game;
 import com.olimposystems.android.util.RingtoneUtil;
 
 import java.io.File;
@@ -39,40 +40,23 @@ public class MSX1ringtonesActivity extends Activity {
 
         setContentView(R.layout.msx1_layout);
 
-		// game_antartic adventure
-		registraBotaoImagem("Antartic Adventure",R.id.botao_play_antartic,R.id.botao_use_ringtone_antartic,R.raw.antartic);
-		
-        // goonies
-		registraBotaoImagem("Goonies",R.id.botao_play_goonies,R.id.botao_use_ringtone_goonies,R.raw.goonies);
-		
-        // guardic
-		registraBotaoImagem("Guardic",R.id.botao_play_guardic,R.id.botao_use_ringtone_guardic,R.raw.guardic);
-
-        // king's valley
-		registraBotaoImagem("King's Valley",R.id.botao_play_kingsv,R.id.botao_use_ringtone_kings,R.raw.kingsvalley);
-
-        // Nemesis 2
-		registraBotaoImagem("Nemesis 2",R.id.botao_play_nemesis2,R.id.botao_use_ringtone_nemesis2,R.raw.gradius2);
-
-		// Salamander
-		registraBotaoImagem("Salamander",R.id.botao_play_salamander,R.id.botao_use_ringtone_salamander,R.raw.salamander);
-
-		// pacmania
-		registraBotaoImagem("Pacmania",R.id.botao_play_pacmania,R.id.botao_use_ringtone_pacmania,R.raw.pacmania);
-
-        // pippols
-		registraBotaoImagem("Pippols",R.id.botao_play_pippols,R.id.botao_use_ringtone_pippols,R.raw.pippols);
-
-		// zanac
-		registraBotaoImagem("Zanac",R.id.botao_play_zanac,R.id.botao_use_ringtone_zanac,R.raw.zanac);
+		registraBotaoImagem(MSX1Game.antarticAdventure);
+		registraBotaoImagem(MSX1Game.goonies);
+		registraBotaoImagem(MSX1Game.guardic);
+		registraBotaoImagem(MSX1Game.kingsvalley);
+		registraBotaoImagem(MSX1Game.gradius2);
+		registraBotaoImagem(MSX1Game.salamander);
+		registraBotaoImagem(MSX1Game.pacmania);
+		registraBotaoImagem(MSX1Game.pippols);
+		registraBotaoImagem(MSX1Game.zanac);
         
 		Log.i(CATEGORIA, "tela MSX1 ok");
 		
     }
 
-	private void registraBotaoImagem(final String nome,int botaoPlayId, final int botaoRingtoneId,final int arquivoId) {
+	private void registraBotaoImagem(final MSX1Game game) {
 
-		ImageButton btnTocaRingTone = (ImageButton) findViewById(botaoPlayId);
+		ImageButton btnTocaRingTone = (ImageButton) findViewById(game.botaoPlayId());
 		btnTocaRingTone.setImageResource(R.drawable.speaker_logo);
 		btnTocaRingTone.setOnClickListener(new View.OnClickListener() {
 
@@ -84,25 +68,25 @@ public class MSX1ringtonesActivity extends Activity {
 					player.stop();
 				}
 
-				player = MediaPlayer.create(MSX1ringtonesActivity.this,arquivoId);
-				Log.i(CATEGORIA, "tocando "+nome+"...");
+				player = MediaPlayer.create(MSX1ringtonesActivity.this,game.arquivoId());
+				Log.i(CATEGORIA, "tocando "+game.nome()+"...");
 				player.start();
 
-				Toast.makeText(MSX1ringtonesActivity.this, "playing "+nome+" ringtone...", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MSX1ringtonesActivity.this, "playing "+game.nome()+" ringtone...", Toast.LENGTH_SHORT).show();
 
 			}
 		});
 
-		ImageButton btnConfiguraRingTone = (ImageButton) findViewById(botaoRingtoneId);
+		ImageButton btnConfiguraRingTone = (ImageButton) findViewById(game.botaoRingtoneId());
 		btnConfiguraRingTone.setImageResource(R.drawable.checkmark);
 		btnConfiguraRingTone.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
 
 				RingtoneUtil ringtoneManager = new RingtoneUtil();
-				ringtoneManager.setRingtone(botaoRingtoneId, MSX1ringtonesActivity.this);
+				ringtoneManager.setRingtone(game.botaoRingtoneId(), MSX1ringtonesActivity.this);
 
-				Toast.makeText(MSX1ringtonesActivity.this, "using "+nome+" ringtone...", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MSX1ringtonesActivity.this, "using "+game.nome()+" ringtone...", Toast.LENGTH_SHORT).show();
 			}
 		});
 	}

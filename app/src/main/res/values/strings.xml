@@ -3,7 +3,7 @@
 
     <string name="titulo"> MSX ringtones !</string>
     <string name="app_name">MSX ringtones</string>
-    <string name="versao">release 1.4</string>
+    <string name="versao">release 1.5</string>
     <string name="creditos">Developed by </string>
     <string name="comments">Any comments ? please let us now</string>
     <string name="rodape">PSG and FM-PAC for your ears</string>
@@ -20,13 +20,13 @@
     <string name="jogo_goonies">Goonies</string>
     <string name="jogo_guardic">Guardic</string>
     <string name="jogo_kingsv">King\'s Valley</string>
-    <string name="jogo_nemesis2">Nemesis 2</string>
+    <string name="jogo_nemesis2">Gradius 2</string>
     <string name="jogo_pacmania">PacMania</string>
     <string name="jogo_pippols">Pippols</string>
     <string name="jogo_salamander">Salamander</string>
     <string name="jogo_zanac">Zanac</string>
     
-    <string name="jogo_aleste">Aleste</string>    
+    <string name="jogo_aleste">Aleste 2</string>
     <string name="jogo_firehawk">Fire Hawk</string>
     <string name="jogo_fray">Fray</string>
     <string name="jogo_golvellius1">Golvellius</string>
