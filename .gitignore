@@ -1,25 +1,76 @@
-*.class
+# 
+# .gitignore for any Java app =)
+#
+# https://gist.github.com/boaglio/8c76e6cf795afa0ee04f2faf3ea97a56
+#
 
-# eclipse
-.classpath
-.project
-.settings/
-.svn/
-.idea/
+# Gradle
 .gradle/
-gradle/
+**/build/
+gradle-app.setting
+.gradletasknamecache
+!gradle-wrapper.jar
+!gradle-wrapper.properties
 
-app/app-release.apk
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
 
-.mtj.tmp/
-build/
-captures/
-
-# Package Files #
+# Package Files 
 *.jar
 *.war
+*.nar
 *.ear
+*.zip
+*.tar.gz
+*.rar
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-/target/
+replay_pid*
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+## IDE ###
+
+# BlueJ  
+*.ctxt
+
+# IntelliJ 
+.idea/
+*.iml
+*.ipr
+*.iws
+captures/*
+**/*.apk
+gradle/
+app/release/
+
+# Eclipse 
+.classpath
+.project
+.settings/
+
+# VSCode
+.vscode
+
+# NetBeans
+nbproject/
+
+# JDeveloper
+.jdeveloper/
+.adf/
+
+## Others
+
+# macOS
+.DS_Store

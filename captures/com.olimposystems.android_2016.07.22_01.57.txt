@@ -1,2 +1,0 @@
-Bad activity command, or no activities match: com.olimposystems.android
-Use -h for help.

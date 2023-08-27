@@ -25,12 +25,12 @@ import com.olimposystems.android.R;
 public class RingtoneUtil {
 
 	private static final String AUDIO_OGG = "audio/ogg";
-	private static final String CATEGORIA = "msx ringtone";
+	private static final String CATEGORY = "msx ringtone";
 
 
-	public boolean saveas(int ressound, String filename, String mimeType,Activity activity ) {
+	public boolean saveAs(int ressound, String filename, String mimeType,Activity activity ) {
 
-		Log.i(CATEGORIA, "setando ringtone " + filename);
+		Log.i(CATEGORY, "setando ringtone " + filename);
 
 
 		File path = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_RINGTONES);
@@ -38,7 +38,7 @@ public class RingtoneUtil {
 
 		try {
 
-			Log.i(CATEGORIA,"Acessando: " + path.toString());
+			Log.i(CATEGORY,"Acessando: " + path.toString());
 
 			if (!path.exists()) {
 				path.mkdirs();
@@ -50,12 +50,12 @@ public class RingtoneUtil {
 			byte[] data = new byte[is.available()];
 			is.read(data);
 			os.write(data);
-			Log.i(CATEGORIA,"Total em bytes: " + data.length);
+			Log.i(CATEGORY,"Total em bytes: " + data.length);
 			is.close();
 			os.close();
 
-			Log.i(CATEGORIA, "path = "+path);
-			Log.i(CATEGORIA, "filename = "+filename);
+			Log.i(CATEGORY, "path = "+path);
+			Log.i(CATEGORY, "filename = "+filename);
 
 			ContentValues values = new ContentValues();
 			values.put(MediaStore.MediaColumns.DATA, file.getAbsolutePath());
@@ -69,110 +69,67 @@ public class RingtoneUtil {
 			values.put(MediaStore.Audio.Media.IS_ALARM, false);
 			values.put(MediaStore.Audio.Media.IS_MUSIC, false);
 
-			Log.i(CATEGORIA, "absolute path="+file.getAbsolutePath());
+			Log.i(CATEGORY, "absolute path="+file.getAbsolutePath());
 
 			Uri uri = MediaStore.Audio.Media.getContentUriForPath(file
 					.getAbsolutePath());
 
-			Log.i(CATEGORIA, "cadastrando uri = "+uri);
+			Log.i(CATEGORY, "cadastrando uri = "+uri);
 			int del = activity.getContentResolver().delete(
 					uri,
 					MediaStore.MediaColumns.DATA + "=\""
 							+ file.getAbsolutePath() + "\"", null);
 
-			Log.i(CATEGORIA, "removendo uri = "+del);
+			Log.i(CATEGORY, "removendo uri = "+del);
 
 			Uri newUri = activity.getContentResolver().insert(uri, values);
 
-			Log.i(CATEGORIA, "cadastrando new uri = "+newUri);
+			Log.i(CATEGORY, "cadastrando new uri = "+newUri);
 
 			RingtoneManager.setActualDefaultRingtoneUri(
 					activity , RingtoneManager.TYPE_RINGTONE,
 					newUri);
 
-			Log.i(CATEGORIA, "ringtone "+filename+ " configurado!");
+			Log.i(CATEGORY, "ringtone "+filename+ " configurado!");
 
 		} catch (IOException e) {
-			Log.w(CATEGORIA, "Erro em " + file, e);
+			Log.w(CATEGORY, "Erro em " + file, e);
 		}
 
 		return true;
 	}
 
 
-
 	public void setRingtone(int opt, Activity activity) {
 
-		Log.i(CATEGORIA, "opt=" + opt);
+		Log.i(CATEGORY, "opt=" + opt);
 
-		switch (opt) {
+		if (opt == R.id.botao_use_ringtone_aleste)      saveAs(R.raw.aleste, "aleste", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_antartic)    saveAs(R.raw.antartic, "antartic", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_firehawk) 	saveAs(R.raw.firehawk, "firehawk", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_fray)   		saveAs(R.raw.fray, "fray", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_golvellius1) saveAs(R.raw.golvellius, "golvellius", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_goonies) 	saveAs(R.raw.goonies, "goonies", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_guardic) 	saveAs(R.raw.guardic, "guardic", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_kings) 		saveAs(R.raw.kingsvalley, "kings1", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_metalgear) 	saveAs(R.raw.metalgear1, "metalgear1", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_pacmania)  	saveAs(R.raw.pacmania, "pacmania", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_pippols) 	saveAs(R.raw.pippols, "pippols", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_sdsnatcher) 	saveAs(R.raw.sdsnatcher, "sdsnatcher", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_zanac) 		saveAs(R.raw.zanac, "zanac", AUDIO_OGG, activity);
+		if (opt == R.id.botao_use_ringtone_usas) 		saveAs(R.raw.usas, "usas", AUDIO_OGG, activity);
 
-		case R.id.botao_use_ringtone_aleste:
-			saveas(R.raw.aleste, "aleste", AUDIO_OGG, activity);
-			break;
+//		if (opt == R.id.botao_use_ringtone_nemesis2) 	saveAs(R.raw.nemesis2, "nemesis2", AUDIO_OGG, activity);
+//		if (opt == R.id.botao_use_ringtone_magicaltree) saveAs(R.raw.magicaltree, "magicaltree", AUDIO_OGG, activity);
+//		if (opt == R.id.botao_use_ringtone_metalgear2) 	saveAs(R.raw.metalgear1b, "metalgear2", AUDIO_OGG, activity);
+//		if (opt == R.id.botao_use_ringtone_outrun) 		saveAs(R.raw.outrun, "outrun", AUDIO_OGG, activity);
+//		if (opt == R.id.botao_use_ringtone_psychoworld) saveAs(R.raw.psychoworld, "psychoworld", AUDIO_OGG, activity);
+//		if (opt == R.id.botao_use_ringtone_starwars) 	saveAs(R.raw.starwars, "starwars", AUDIO_OGG, activity);
+//		if (opt == R.id.botao_use_ringtone_undeadline) 	saveAs(R.raw.undeadline, "undeadline", AUDIO_OGG, activity);
+//		if (opt == R.id.botao_use_ringtone_vampire) 	saveAs(R.raw.vampire, "vampire", AUDIO_OGG, activity);
+//		if (opt == R.id.botao_use_ringtone_xak) 		saveAs(R.raw.xak, "xak", AUDIO_OGG, activity);
+//		if (opt == R.id.botao_use_ringtone_higemaru) 	saveAs(R.raw.higemaru, "higemaru", AUDIO_OGG, activity);
+//		if (opt == R.id.botao_use_ringtone_jetbomber) 	saveAs(R.raw.jetbomber, "jetbomber", AUDIO_OGG, activity);
 
-		case R.id.botao_use_ringtone_antartic:
-			saveas(R.raw.antartic, "game_antartic", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_firehawk:
-			saveas(R.raw.firehawk, "firehawk", AUDIO_OGG, activity);
-			break;
-			
-		case R.id.botao_use_ringtone_fray:
-			saveas(R.raw.fray, "fray", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_golvellius1:
-			saveas(R.raw.golvellius, "golvellius", AUDIO_OGG, activity);
-			break;
-			
-		case R.id.botao_use_ringtone_goonies:
-			saveas(R.raw.goonies, "goonies", AUDIO_OGG, activity);
-			break;
-			
-		case R.id.botao_use_ringtone_guardic:
-			saveas(R.raw.guardic, "guardic", AUDIO_OGG, activity);
-			break;
-			
-
-		case R.id.botao_use_ringtone_salamander:
-			saveas(R.raw.salamander, "salamander", AUDIO_OGG, activity);
-			break;
-			
-		case R.id.botao_use_ringtone_kings:
-			saveas(R.raw.kingsvalley, "kings1", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_metalgear:
-			saveas(R.raw.metalgear1, "metalgear1", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_nemesis2:
-			saveas(R.raw.gradius2, "nemesis2", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_pacmania:
-			saveas(R.raw.pacmania, "pacmania", AUDIO_OGG, activity);
-			break;
-			
-		case R.id.botao_use_ringtone_pippols:
-			saveas(R.raw.pippols, "pippols", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_sdsnatcher:
-			saveas(R.raw.sdsnatcher, "sdsnatcher", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_usas:
-			saveas(R.raw.usas, "usas", AUDIO_OGG, activity);
-			break;
-
-		case R.id.botao_use_ringtone_zanac:
-			saveas(R.raw.zanac, "zanac", AUDIO_OGG, activity);
-			break;
-
-		}
 	}
-
 }

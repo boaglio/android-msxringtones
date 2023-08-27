@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 8
-    buildToolsVersion "24.0.0"
+    compileSdkVersion 17
 
     defaultConfig {
         applicationId "com.olimposystems.android"
         minSdkVersion 8
-        targetSdkVersion 17
+        targetSdkVersion 31
     }
+
+    namespace 'com.olimposystems.android'
 
     buildTypes {
         release {
