@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 17
+
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.olimposystems.android"
-        minSdkVersion 8
-        targetSdkVersion 31
+        minSdkVersion 17
+        targetSdkVersion 34
     }
 
     namespace 'com.olimposystems.android'
@@ -17,4 +18,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
 }
