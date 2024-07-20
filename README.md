@@ -15,4 +15,4 @@ Aplicação para Android - MSX Ringtones
 
 ## Google Play
 
-https://play.google.com/store/apps/details?id=com.olimposystems.android.timpre&hl=pt_BR
+https://play.google.com/store/apps/details?id=com.olimposystems.android
