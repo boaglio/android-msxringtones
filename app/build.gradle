@@ -1,25 +1,28 @@
-apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-
-    compileSdk 34
+    namespace = 'com.olimposystems.android'
+    compileSdk = 36
 
     defaultConfig {
-        applicationId "com.olimposystems.android"
-        minSdkVersion 17
-        targetSdkVersion 34
+        applicationId = "com.olimposystems.android"
+        minSdk = 23
+        targetSdk = 36
+        versionCode = 11
+        versionName = "1.11"
     }
-
-    namespace 'com.olimposystems.android'
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
         }
     }
-}
 
-dependencies {
-    implementation 'com.android.support.constraint:constraint-layout:2.0.4'
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
 }

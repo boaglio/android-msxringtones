@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.olimposystems.android.util.EdgeToEdge;
+
 public class MSXringtonesActivity extends Activity {
     
 	private static final String CATEGORIA = "msx";
@@ -17,6 +19,7 @@ public class MSXringtonesActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard_layout);
+        EdgeToEdge.aplica(this);
  
         Button botaoMSX1 = (Button) findViewById(R.id.btn_msx1);
 		botaoMSX1.setOnClickListener(new View.OnClickListener() {
@@ -67,7 +70,7 @@ public class MSXringtonesActivity extends Activity {
 		return true;
 	}
 	@Override
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item) {
 		
 		switch (item.getItemId()) {
 		case 1:
@@ -78,7 +81,7 @@ public class MSXringtonesActivity extends Activity {
 			this.finish();
 			return true;			
 		}
-		return false;
+		return super.onOptionsItemSelected(item);
 	}
 
  

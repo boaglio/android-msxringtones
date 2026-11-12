@@ -7,12 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.olimposystems.android.util.EdgeToEdge;
+
 public class SobreActivity extends Activity {
 
+	@Override
 	protected void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
 
 		setContentView(R.layout.sobre);
+		EdgeToEdge.aplica(this);
 
 		Button botao1 = (Button) findViewById(R.id.botao_comments);
 		botao1.setOnClickListener(new View.OnClickListener() {

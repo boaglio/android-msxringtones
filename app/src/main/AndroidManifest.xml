@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:versionCode="10"
-    android:versionName="1.10"
-    android:installLocation="preferExternal">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Needed to set the default ringtone. Granted by the user in system settings
+         (Settings.ACTION_MANAGE_WRITE_SETTINGS), not via the runtime permission dialog. -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!-- Only needed on Android 9 and below; Android 10+ writes via MediaStore without it. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +18,7 @@
             android:name=".MSXringtonesActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" /> 
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -23,6 +23,7 @@ dependency-reduced-pom.xml
 
 # Package Files 
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.nar
 *.ear
@@ -52,7 +53,6 @@ replay_pid*
 *.iws
 captures/*
 **/*.apk
-gradle/
 app/release/
 
 # Eclipse 

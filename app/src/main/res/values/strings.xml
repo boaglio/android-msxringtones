@@ -3,7 +3,7 @@
 
     <string name="titulo"> MSX ringtones !</string>
     <string name="app_name">MSX ringtones</string>
-    <string name="versao">release 1.8</string>
+    <string name="versao">release 1.11</string>
     <string name="comments">Privacy Policy</string>
     <string name="rodape">PSG and FM-PAC for your ears</string>
     <string name="nada"> </string>
@@ -14,6 +14,11 @@
     <string name="sair">Exit</string>
     <string name="set_ringtone">Use this ringtone</string>
     <string name="goodbye">Goodbye! Come back soon!</string>
+    <string name="permission_title">Permission needed</string>
+    <string name="permission_write_settings">To set a ringtone, allow MSX ringtones to modify system settings, then come back and tap the button again.</string>
+    <string name="open_settings">Open settings</string>
+    <string name="permission_retry">Allow storage access, then tap the button again.</string>
+    <string name="ringtone_error">Could not set the ringtone.</string>
     
     <string name="jogo_antartic">Antartic Adventure</string>
     <string name="jogo_goonies">Goonies</string>
