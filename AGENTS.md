@@ -9,8 +9,8 @@ Guidance for AI coding agents working in this repository.
 - Language: **Kotlin**. UI is **Jetpack Compose** with **Material 3**.
 - The app has a single activity, `MSXringtonesActivity`. Screens are composables, and navigation is a simple screen stack in `ui/MsxApp.kt`, so there is no Navigation library.
 - Single Gradle module: `:app`.
-- No tests exist.
-- Code identifiers, log messages and comments are mostly in **Portuguese**. For example: `nome` means "name", `arquivoId` means "file id", `maquina` means "machine", `tela` means "screen", `sobre` means "about", `voltar` means "back", `tocando` means "playing", and `define` means "set". User-facing strings are in English, in `res/values/strings.xml`. Keep that split.
+- Unit tests: `app/src/test/` (JUnit 4, JVM-only). Run them with `./gradlew :app:testDebugUnitTest`.
+- Code identifiers, log messages and comments are mostly in **Portuguese**. For example: `nome` means "name", `arquivoId` means "file id", `maquina` means "machine", `tela` means "screen", `sobre` means "about", `voltar` means "back", `tocando` means "playing", and `define` means "set". User-facing strings are in English only, in `res/values/strings.xml`. Keep that split, and don't add translations.
 
 ## Build
 
@@ -27,6 +27,7 @@ Guidance for AI coding agents working in this repository.
 | versionCode / versionName | in `app/build.gradle` (currently 11 / 1.11). The About screen reads `BuildConfig.VERSION_NAME` |
 
 ```bash
+./gradlew :app:testDebugUnitTest
 ./gradlew :app:assembleDebug
 ./gradlew :app:assembleRelease   # R8 + resource shrinking on; unsigned, signing is configured outside the repo
 ./gradlew :app:lint
@@ -79,7 +80,7 @@ app/src/main/res/
 2. Add the title-screen image to `app/src/main/res/drawable-hdpi/`.
 3. Add one constant to `MsxGame` in `MsxGame.kt`, with the display name, `Maquina`, `R.raw.<name>` and `R.drawable.<image>`.
 
-You don't need to change anything else: the list, playback and ringtone code all read from the enum.
+You don't need to change anything else: the list, playback and ringtone code all read from the enum. Update the game counts in `MsxGameTest`.
 
 ## Known issues and gotchas
 
@@ -93,7 +94,7 @@ You don't need to change anything else: the list, playback and ringtone code all
 - Kotlin official style, 4-space indent.
 - Composables take state and callbacks as parameters. Only `MsxApp` owns navigation and the player.
 - Icons are local vector drawables, so don't add `material-icons-*`.
-- Put user-facing text in `strings.xml`, never inline. Use `stringResource` in composables and `LocalResources.current.getString` in callbacks and coroutines. Lint rejects `LocalContext.current.getString`.
+- Put user-facing text in `strings.xml`, never inline. The app is English only. Use `stringResource` in composables and `LocalResources.current.getString` in callbacks and coroutines. Lint rejects `LocalContext.current.getString`.
 - Guard newer platform APIs with `Build.VERSION.SDK_INT` checks and `@RequiresApi`.
 - Logging uses `android.util.Log` with short tags (`msx player`, `msx ringtone`).
 - When releasing, bump `versionCode` and `versionName` in `app/build.gradle`.
@@ -101,9 +102,9 @@ You don't need to change anything else: the list, playback and ringtone code all
 
 ## Verifying changes
 
-There are no unit or instrumentation tests. At a minimum:
+There are unit tests but no instrumentation tests. At a minimum:
 
-1. `./gradlew :app:assembleDebug` and `./gradlew :app:lint` must succeed. Also build `:app:assembleRelease` to make sure R8 is happy.
+1. `./gradlew :app:testDebugUnitTest`, `./gradlew :app:assembleDebug` and `./gradlew :app:lint` must succeed. Also build `:app:assembleRelease` to make sure R8 is happy.
 2. If you have a device or emulator, install the app with `adb install -r app/build/outputs/apk/debug/app-debug.apk`. Then check:
    - Play and stop work.
    - "Set ringtone" sends you to "Modify system settings" the first time, and finishes the job when you come back.
