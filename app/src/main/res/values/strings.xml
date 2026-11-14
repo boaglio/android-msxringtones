@@ -11,16 +11,25 @@
     <string name="comments">Privacy Policy</string>
     <string name="versao">Version %1$s</string>
 
-    <string name="set_ringtone">Set ringtone</string>
+    <string name="set_as">Set as…</string>
     <string name="cd_play">Play %1$s</string>
     <string name="cd_stop">Stop %1$s</string>
-    <string name="ringtone_set">%1$s is now your ringtone</string>
-    <string name="ringtone_error">Could not set the ringtone.</string>
+    <string name="tempo">%1$s / %2$s</string>
 
-    <string name="permission_title">Permission needed</string>
-    <string name="permission_write_settings">To set a ringtone, allow MSX ringtones to modify system settings. The ringtone will be set when you come back.</string>
-    <string name="open_settings">Open settings</string>
-    <string name="cancel">Cancel</string>
-    <string name="storage_denied">Storage access is needed to save the ringtone.</string>
+    <string name="tipo_toque">Ringtone</string>
+    <string name="tipo_notificacao">Notification</string>
+    <string name="tipo_alarme">Alarm</string>
+    <string name="frase_toque">ringtone</string>
+    <string name="frase_notificacao">notification sound</string>
+    <string name="frase_alarme">alarm</string>
+
+    <!-- %1$s = game, %2$s = ringtone / notification sound / alarm -->
+    <string name="definido">%1$s is now your %2$s</string>
+    <string name="salvo_titulo">Use %1$s as your %2$s</string>
+    <string name="salvo_texto">The sound is saved on your phone. MSX ringtones can set it for you if you allow it to modify system settings, or you can pick "%1$s" yourself in Sound settings.</string>
+    <string name="permitir_e_definir">Allow &amp; set</string>
+    <string name="escolher_sozinho">Choose myself</string>
+    <string name="ringtone_error">Could not save the sound.</string>
+    <string name="storage_denied">Storage access is needed to save the sound.</string>
 
 </resources>

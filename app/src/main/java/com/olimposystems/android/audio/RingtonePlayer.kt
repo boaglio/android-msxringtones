@@ -56,6 +56,15 @@ class RingtonePlayer(context: Context) {
         Log.i(TAG, "tocando ${game.nome}...")
     }
 
+    /** Posição e duração (ms) do que está tocando, ou null se nada toca. */
+    fun progresso(): Pair<Int, Int>? = player?.let { mp ->
+        try {
+            mp.currentPosition to mp.duration
+        } catch (e: IllegalStateException) {
+            null
+        }
+    }
+
     fun para() {
         player?.run {
             if (isPlaying) stop()

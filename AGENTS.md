@@ -34,7 +34,8 @@ Guidance for AI coding agents working in this repository.
 ./gradlew :app:lint
 ```
 
-- `local.properties` is committed, but it contains a machine-specific `sdk.dir`. Do not change it for your own environment. Set `ANDROID_HOME` instead.
+- `local.properties` is git-ignored (machine-specific `sdk.dir`). Create it or set `ANDROID_HOME`.
+- CI: `.github/workflows/ci.yml` runs on every push to `main` and on every PR. It runs `verifyRoborazziDebug` (unit tests plus screenshot comparison, with a 1% tolerance), lint, and the debug, release and bundle builds, and it uploads the debug APK as an artifact. If you change the UI, re-record the screenshots, or CI will fail.
 - When you upgrade Kotlin, change both plugin versions in the root `build.gradle` together.
 
 ## Source layout
@@ -45,8 +46,10 @@ app/src/main/java/com/olimposystems/android/
 │                             # The class name is kept from 1.x so existing launcher shortcuts keep working.
 ├── MsxGame.kt                # enum Maquina (MSX1/MSX2) + enum MsxGame (name, machine, R.raw, R.drawable)
 ├── audio/RingtonePlayer.kt   # One MediaPlayer at a time, with audio focus. `tocando` is Compose state
-├── util/RingtoneSetter.kt    # suspend define(): saves .ogg to Ringtones/ (MediaStore on API 29+,
-│                             # file path on 23-28) and sets it as the default ringtone. Returns a Resultado
+├── util/TipoToque.kt         # enum TOQUE / NOTIFICACAO / ALARME: RingtoneManager type, folder, MediaStore flag, labels
+├── util/RingtoneSetter.kt    # suspend define(game, tipo): saves .ogg to Ringtones/, Notifications/ or Alarms/
+│                             # (MediaStore on API 29+, file path on 23-28). Sets it as default only if
+│                             # WRITE_SETTINGS is granted. atuais() returns which games are set now (badges)
 └── ui/
     ├── MsxApp.kt             # Screen stack (Tela enum), BackHandler, shared RingtonePlayer
     ├── HomeScreen.kt         # MSX1 / MSX2 cards
@@ -68,11 +71,16 @@ app/src/main/res/
 1. `MsxApp` holds a saveable stack of `Tela` values. Back and predictive-back gestures pop it through `BackHandler`. Changing screens or `ON_STOP` stops playback.
 2. `GameListScreen` shows `MsxGame.da(maquina)` in a `LazyVerticalGrid` with adaptive columns, so it shows one column on phones and more on tablets and foldables.
    - The play/stop toggle calls `player.alterna(game)`.
-   - **Set ringtone** calls `RingtoneSetter.define(context, game)` on `Dispatchers.IO`. The result is handled like this:
-     - `PrecisaPermissaoConfiguracoes`: show a dialog that opens `ACTION_MANAGE_WRITE_SETTINGS`. On `ON_RESUME`, if the permission is now granted, the pending game is set automatically.
+   - The card shows a progress bar and time while its track plays (`player.progresso()`, polled every 250 ms).
+   - **Set as…** opens a menu (Ringtone / Notification / Alarm). It calls `RingtoneSetter.define(context, game, tipo)` on `Dispatchers.IO`, and the result is handled like this:
+     - `Ok`: the sound was saved and set, so show a snackbar.
+     - `Salvo(uri)`: the sound was saved, but the app doesn't have "Modify system settings", which is **optional**. Show a dialog with two choices:
+       - **Allow & set** opens `ACTION_MANAGE_WRITE_SETTINGS`. On `ON_RESUME`, if the permission was granted, `aplica()` sets the saved sound.
+       - **Choose myself** opens `ACTION_SOUND_SETTINGS`, where the user picks the sound.
      - `PrecisaPermissaoArmazenamento` (API 23-28 only): request `WRITE_EXTERNAL_STORAGE`, then retry.
-     - `Ok` / `Erro`: show a snackbar.
-3. The ringtone file is named after the raw resource (`<entry>.ogg`) and saved in `Ringtones/`.
+     - `Erro`: show a snackbar.
+   - Badges on each card come from `RingtoneSetter.atuais()`. It compares each type's current system default with the last file the app saved for that type, which is kept in SharedPreferences `toques`. It's refreshed on `ON_RESUME`, so a sound the user picked manually in Sound settings also gets a badge.
+3. The file is named after the raw resource (`<entry>.ogg`) and saved in the folder for its type (`Ringtones/`, `Notifications/` or `Alarms/`).
 
 ## Adding a new game ringtone
 

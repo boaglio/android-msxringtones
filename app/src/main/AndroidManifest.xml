@@ -10,9 +10,13 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
 
+    <!-- No backups: the only local data (which sounds were set) must stay on the device.
+         allowBackup=false covers Android 11 and older, so fullBackupContent isn't needed. -->
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
         android:enableOnBackInvokedCallback="true"
+        tools:ignore="DataExtractionRules"
         tools:targetApi="33"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

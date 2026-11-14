@@ -16,12 +16,12 @@ The app does not collect, store, transmit, share or sell any personal informatio
 
 ### Permissions
 
-The app requests only the permissions it needs to set a ringtone:
+The app requests only the permissions it needs to save and set ringtones, notification sounds and alarms:
 
-- **Modify system settings** (`android.permission.WRITE_SETTINGS`) is used only to set the chosen soundtrack as your default ringtone. You grant it on Android's system settings screen and can revoke it there at any time.
-- **Storage** (`android.permission.WRITE_EXTERNAL_STORAGE`) is used on Android 9 and older only, to save the ringtone audio file in the `Ringtones` folder on your device. On Android 10 and newer, the app saves the file without this permission.
+- **Modify system settings** (`android.permission.WRITE_SETTINGS`) is optional. If you grant it, the app sets the chosen soundtrack as your default ringtone, notification sound or alarm in one tap. If you don't, the sound is still saved and you can pick it yourself in Android's Sound settings. You grant or revoke this permission on Android's system settings screen at any time.
+- **Storage** (`android.permission.WRITE_EXTERNAL_STORAGE`) is used on Android 9 and older only, to save the audio file in the `Ringtones`, `Notifications` or `Alarms` folder on your device. On Android 10 and newer, the app saves the file without this permission.
 
-The audio file that the app saves stays on your device, and you can delete it at any time.
+The audio files that the app saves stay on your device, and you can delete them at any time. The app also remembers, only on your device, which soundtrack it saved for each sound type, so it can show which games you are using. This information never leaves your device and is removed when you uninstall the app.
 
 ## Log Data
 

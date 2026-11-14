@@ -9,24 +9,25 @@ Aplicação para Android - MSX Ringtones
 
 | MSX1 | MSX2 |
 |---|---|
-| Antartic Adventure | Aleste 2 |
-| Goonies | Firehawk |
+| Antarctic Adventure | Aleste 2 |
+| Goonies | Fire Hawk |
 | Guardic | Fray |
 | King's Valley | Golvellius |
 | Gradius 2 | Metal Gear |
-| Pacmania | SD Snatcher |
+| Pac-Mania | SD Snatcher |
 | Pippols | Treasure of USAS |
 | Salamander | |
 | Zanac | |
 
 ## Features
 
-- Play any soundtrack, and set it as the default ringtone with one tap.
+- Play any soundtrack, with a progress bar and time while it plays.
+- Set it as your **ringtone, notification sound or alarm**. Badges on each game show which sounds you are using.
 - Material 3 design, with Material You colors on Android 12+ and a dark theme.
 - Adapts to phones, tablets and foldables, in portrait and landscape.
 - Android 13+ themed icon, splash screen and predictive back gesture.
 
-To set a ringtone, the app needs the **Modify system settings** permission. The first time you tap **Set ringtone**, the app opens that settings screen. When you come back, it finishes setting the ringtone.
+Tap **Set as…** and choose Ringtone, Notification or Alarm. The sound is always saved to your phone. If you allow MSX Ringtones to **modify system settings**, it sets the sound for you. If you'd rather not, choose **Choose myself**, and the app opens Android's Sound settings, where the new sound is already in the list.
 
 ## Privacy
 

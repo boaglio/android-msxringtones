@@ -74,3 +74,6 @@ nbproject/
 
 # macOS
 .DS_Store
+
+# Android SDK location (machine-specific)
+local.properties
