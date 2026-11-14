@@ -61,7 +61,7 @@ PSG and FM-PAC for your ears!
 MSX Ringtones brings the soundtracks of classic MSX1 and MSX2 games to your phone. Listen to any of them and set your favorite as your ringtone with one tap.
 
 MSX1: Antartic Adventure, Goonies, Guardic, King's Valley, Gradius 2, Pacmania, Pippols, Salamander, Zanac.
-MSX2: Aleste, Firehawk, Fray, Golvellius, Metal Gear, SD Snatcher, Treasure of USAS.
+MSX2: Aleste 2, Firehawk, Fray, Golvellius, Metal Gear, SD Snatcher, Treasure of USAS.
 
 • Material 3 design with Material You colors and dark theme
 • Works on phones, tablets and foldables

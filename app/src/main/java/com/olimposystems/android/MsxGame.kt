@@ -29,7 +29,7 @@ enum class MsxGame(
     SALAMANDER("Salamander", Maquina.MSX1, R.raw.salamander, R.drawable.salamander),
     ZANAC("Zanac", Maquina.MSX1, R.raw.zanac, R.drawable.zanac),
 
-    ALESTE("Aleste", Maquina.MSX2, R.raw.aleste, R.drawable.aleste),
+    ALESTE("Aleste 2", Maquina.MSX2, R.raw.aleste, R.drawable.aleste),
     FIREHAWK("Firehawk", Maquina.MSX2, R.raw.firehawk, R.drawable.firehawk),
     FRAY("Fray", Maquina.MSX2, R.raw.fray, R.drawable.fray),
     GOLVELLIUS("Golvellius", Maquina.MSX2, R.raw.golvellius, R.drawable.golvellius),

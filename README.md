@@ -9,7 +9,7 @@ Aplicação para Android - MSX Ringtones
 
 | MSX1 | MSX2 |
 |---|---|
-| Antartic Adventure | Aleste |
+| Antartic Adventure | Aleste 2 |
 | Goonies | Firehawk |
 | Guardic | Fray |
 | King's Valley | Golvellius |
