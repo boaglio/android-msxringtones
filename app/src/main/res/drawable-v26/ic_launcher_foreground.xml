@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Low-res legacy art (72px) scaled into the adaptive-icon safe zone.
-     Replace with a 432x432 PNG or a vector for a crisp icon. -->
-<inset xmlns:android="http://schemas.android.com/apk/res/android"
-    android:drawable="@drawable/ic_launcher_art"
-    android:inset="20%" />

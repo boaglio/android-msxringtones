@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- MSX Ringtones icon: pixel-art beamed notes. Generated; 16x16 grid in the 66dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M42.75,27.75h37.5v3.75h-37.5zM42.75,31.5h37.5v3.75h-37.5zM42.75,35.25h7.5v3.75h-7.5zM72.75,35.25h7.5v3.75h-7.5zM42.75,39h7.5v3.75h-7.5zM72.75,39h7.5v3.75h-7.5zM42.75,42.75h7.5v3.75h-7.5zM72.75,42.75h7.5v3.75h-7.5zM42.75,46.5h7.5v3.75h-7.5zM72.75,46.5h7.5v3.75h-7.5zM42.75,50.25h7.5v3.75h-7.5zM72.75,50.25h7.5v3.75h-7.5zM42.75,54h7.5v3.75h-7.5zM72.75,54h7.5v3.75h-7.5zM42.75,57.75h7.5v3.75h-7.5zM72.75,57.75h7.5v3.75h-7.5zM42.75,61.5h7.5v3.75h-7.5zM72.75,61.5h7.5v3.75h-7.5zM35.25,65.25h15v3.75h-15zM65.25,65.25h15v3.75h-15zM27.75,69h22.5v3.75h-22.5zM57.75,69h22.5v3.75h-22.5zM27.75,72.75h22.5v3.75h-22.5zM57.75,72.75h22.5v3.75h-22.5zM31.5,76.5h15v3.75h-15zM61.5,76.5h15v3.75h-15z" />
+</vector>

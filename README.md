@@ -28,6 +28,10 @@ Aplicação para Android - MSX Ringtones
 
 To set a ringtone, the app needs the **Modify system settings** permission. The first time you tap **Set ringtone**, the app opens that settings screen. When you come back, it finishes setting the ringtone.
 
+## Privacy
+
+The app collects no data and has no Internet permission. See the [privacy policy](PRIVACY.md).
+
 ## Requirements
 
 - Android 6.0 (API 23) or newer.

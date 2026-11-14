@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.olimposystems.android.BuildConfig
 import com.olimposystems.android.R
 
-private const val POLITICA_PRIVACIDADE = "https://boaglio.com/index.php/en/privacy-policy/"
+private const val POLITICA_PRIVACIDADE = "https://github.com/boaglio/android-msxringtones/blob/main/PRIVACY.md"
 
 @Composable
 fun AboutScreen(onVoltar: () -> Unit) {
