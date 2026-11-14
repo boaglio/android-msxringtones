@@ -38,15 +38,18 @@ The app collects no data and has no Internet permission. See the [privacy policy
 
 ## Screenshots
 
-These screenshots show version 1.x. Version 2 has a new Material 3 look.
+<p>
+  <img src="screenshots/home.png" width="200" alt="Home screen">
+  <img src="screenshots/msx1.png" width="200" alt="MSX1 games">
+  <img src="screenshots/msx2-dark.png" width="200" alt="MSX2 games, dark theme">
+  <img src="screenshots/about.png" width="200" alt="About screen">
+</p>
 
-![alt Screenshot1](screenshots/device-home.png "Screenshot 1")
+On tablets and in landscape, the game list shows more columns:
 
-![alt Screenshot2](screenshots/device-msx1.png "Screenshot 2")
+<img src="screenshots/tablet-msx1.png" width="820" alt="MSX1 games on a tablet">
 
-![alt Screenshot3](screenshots/device-msx2.png "Screenshot 3")
-
-![alt Screenshot4](screenshots/about-1024.png "Screenshot 4")
+The screenshots are rendered from the app's real screens by a JVM screenshot test, with no device needed. To regenerate them after a UI change, run `./gradlew :app:recordRoborazziDebug`.
 
 ## Building
 
@@ -58,7 +61,8 @@ These screenshots show version 1.x. Version 2 has a new Material 3 look.
 ```bash
 ./gradlew :app:assembleDebug        # debug APK: app/build/outputs/apk/debug/app-debug.apk
 ./gradlew :app:assembleRelease      # release (R8 + resource shrinking; sign with your own key)
-./gradlew :app:testDebugUnitTest    # unit tests
+./gradlew :app:testDebugUnitTest    # unit + screenshot tests
+./gradlew :app:recordRoborazziDebug # regenerate screenshots/ (Roborazzi + Robolectric)
 ./gradlew :app:lint
 ```
 

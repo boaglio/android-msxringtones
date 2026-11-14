@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.plugin.compose'
+    id 'io.github.takahirom.roborazzi'
 }
 
 android {
@@ -28,6 +29,13 @@ android {
         }
     }
 
+    testOptions {
+        // Robolectric needs the merged resources to render screens in screenshot tests.
+        unitTests.includeAndroidResources = true
+        // Robolectric loads its native graphics runtime; allow it without JDK warnings.
+        unitTests.all { jvmArgs '--enable-native-access=ALL-UNNAMED' }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -47,4 +55,11 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-compose:2.11.0'
 
     testImplementation 'junit:junit:4.13.2'
+    // Screenshot tests (JVM, no device): ./gradlew :app:recordRoborazziDebug
+    testImplementation platform('androidx.compose:compose-bom:2026.09.00')
+    testImplementation 'androidx.compose.ui:ui-test-junit4'
+    testImplementation 'org.robolectric:robolectric:4.18'
+    testImplementation 'io.github.takahirom.roborazzi:roborazzi:1.79.0'
+    testImplementation 'io.github.takahirom.roborazzi:roborazzi-compose:1.79.0'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
 }

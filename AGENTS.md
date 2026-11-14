@@ -9,7 +9,8 @@ Guidance for AI coding agents working in this repository.
 - Language: **Kotlin**. UI is **Jetpack Compose** with **Material 3**.
 - The app has a single activity, `MSXringtonesActivity`. Screens are composables, and navigation is a simple screen stack in `ui/MsxApp.kt`, so there is no Navigation library.
 - Single Gradle module: `:app`.
-- Unit tests: `app/src/test/` (JUnit 4, JVM-only). Run them with `./gradlew :app:testDebugUnitTest`.
+- Tests: `app/src/test/` (JUnit 4, JVM-only). Run them with `./gradlew :app:testDebugUnitTest`. `ScreenshotTest` renders the real screens with Robolectric and Roborazzi, and the first run downloads a roughly 200 MB Robolectric Android runtime.
+- After any UI change, run `./gradlew :app:recordRoborazziDebug`. It rewrites the README images in `screenshots/` (home, msx1, msx2-dark, about, tablet-msx1), and the regenerated images must be committed with the change.
 - Code identifiers, log messages and comments are mostly in **Portuguese**. For example: `nome` means "name", `arquivoId` means "file id", `maquina` means "machine", `tela` means "screen", `sobre` means "about", `voltar` means "back", `tocando` means "playing", and `define` means "set". User-facing strings are in English only, in `res/values/strings.xml`. Keep that split, and don't add translations.
 
 ## Build
