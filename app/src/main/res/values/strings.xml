@@ -1,41 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="titulo"> MSX ringtones !</string>
     <string name="app_name">MSX ringtones</string>
-    <string name="versao">release 1.11</string>
-    <string name="comments">Privacy Policy</string>
+    <string name="titulo">MSX ringtones!</string>
     <string name="rodape">PSG and FM-PAC for your ears</string>
-    <string name="nada"> </string>
-    <string name="play">play</string>
     <string name="msx1">MSX1 games</string>
     <string name="msx2">MSX2 games</string>
     <string name="sobre">About</string>
-    <string name="sair">Exit</string>
-    <string name="set_ringtone">Use this ringtone</string>
-    <string name="goodbye">Goodbye! Come back soon!</string>
-    <string name="permission_title">Permission needed</string>
-    <string name="permission_write_settings">To set a ringtone, allow MSX ringtones to modify system settings, then come back and tap the button again.</string>
-    <string name="open_settings">Open settings</string>
-    <string name="permission_retry">Allow storage access, then tap the button again.</string>
+    <string name="voltar">Back</string>
+    <string name="comments">Privacy Policy</string>
+    <string name="versao">Version %1$s</string>
+
+    <string name="set_ringtone">Set ringtone</string>
+    <string name="cd_play">Play %1$s</string>
+    <string name="cd_stop">Stop %1$s</string>
+    <string name="ringtone_set">%1$s is now your ringtone</string>
     <string name="ringtone_error">Could not set the ringtone.</string>
-    
-    <string name="jogo_antartic">Antartic Adventure</string>
-    <string name="jogo_goonies">Goonies</string>
-    <string name="jogo_guardic">Guardic</string>
-    <string name="jogo_kingsv">King\'s Valley</string>
-    <string name="jogo_nemesis2">Gradius 2</string>
-    <string name="jogo_pacmania">PacMania</string>
-    <string name="jogo_pippols">Pippols</string>
-    <string name="jogo_salamander">Salamander</string>
-    <string name="jogo_zanac">Zanac</string>
-    
-    <string name="jogo_aleste">Aleste 2</string>
-    <string name="jogo_firehawk">Fire Hawk</string>
-    <string name="jogo_fray">Fray</string>
-    <string name="jogo_golvellius1">Golvellius</string>
-    <string name="jogo_metalgear">Metal Gear</string>
-    <string name="jogo_sdsnatcher">SD Snatcher</string>
-    <string name="jogo_usas">Treasure of USAS</string>
+
+    <string name="permission_title">Permission needed</string>
+    <string name="permission_write_settings">To set a ringtone, allow MSX ringtones to modify system settings. The ringtone will be set when you come back.</string>
+    <string name="open_settings">Open settings</string>
+    <string name="cancel">Cancel</string>
+    <string name="storage_denied">Storage access is needed to save the ringtone.</string>
 
 </resources>
