@@ -23,7 +23,7 @@ Guidance for AI coding agents working in this repository.
 | compileSdk | 37 (current AndroidX/Compose libraries require it) |
 | targetSdk | 36 (Google Play requires 36 for updates since Aug 2026). Raising it opts into Android 17 behavior changes, so test before you bump it |
 | minSdk | 23 |
-| Java | source/target 17; run Gradle with JDK 17+ |
+| Java | source/target 17; run Gradle with JDK 17+, but the screenshot tests (Robolectric, SDK 36) need JDK 21+ |
 | Dependencies | Compose BOM, material3, activity-compose, core-ktx, core-splashscreen, lifecycle-runtime-compose (`app/build.gradle`) |
 | versionCode / versionName | in `app/build.gradle` (currently 12 / 2.0). The About screen reads `BuildConfig.VERSION_NAME` |
 

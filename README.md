@@ -57,7 +57,7 @@ The screenshots are rendered from the app's real screens by a JVM screenshot tes
 - **Built with:** Kotlin, Jetpack Compose and Material 3, as a single-activity app.
 - **Toolchain:** Android Gradle Plugin 9.5, Gradle 9.9 (wrapper included) and Kotlin 2.4.
 - **SDK levels:** compileSdk 37, targetSdk 36, minSdk 23.
-- **Needs:** JDK 17 or newer, and the Android SDK. Set `ANDROID_HOME` or `sdk.dir` in `local.properties`.
+- **Needs:** JDK 17 or newer (JDK 21+ to run the tests), and the Android SDK. Set `ANDROID_HOME` or `sdk.dir` in `local.properties`.
 
 ```bash
 ./gradlew :app:assembleDebug        # debug APK: app/build/outputs/apk/debug/app-debug.apk
