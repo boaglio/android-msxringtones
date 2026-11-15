@@ -30,11 +30,13 @@ Guidance for AI coding agents working in this repository.
 ```bash
 ./gradlew :app:testDebugUnitTest
 ./gradlew :app:assembleDebug
-./gradlew :app:assembleRelease   # R8 + resource shrinking on; unsigned, signing is configured outside the repo
+./gradlew :app:assembleRelease   # R8 + resource shrinking on; unsigned unless the ANDROID_KEYSTORE_* env vars are set
+tools/android-release.sh         # signed Play bundle → release/MSXRingtones-<version>-<code>.aab (needs release.env)
 ./gradlew :app:lint
 ```
 
 - `local.properties` is git-ignored (machine-specific `sdk.dir`). Create it or set `ANDROID_HOME`.
+- Release signing: `app/build.gradle` signs the release only when `ANDROID_KEYSTORE_FILE`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS` and `ANDROID_KEY_PASSWORD` are set. `tools/android-release.sh` loads them from `release.env` (copy `release.env.example`), runs the unit tests and lint, builds the bundle, and checks that it's signed with that key. If `ANDROID_EXPECTED_SHA1` is set, it refuses any other key. A key weaker than 2048-bit RSA only warns, because the app's original 1.x key is 1024-bit and Play still accepts it for updates. `release.env`, `*.jks`, `*.keystore` and `release/` are git-ignored. Never commit them, and never print or log their contents.
 - CI: `.github/workflows/ci.yml` runs on every push to `main` and on every PR. It runs `verifyRoborazziDebug` (unit tests plus screenshot comparison, with a 1% tolerance), lint, and the debug, release and bundle builds, and it uploads the debug APK as an artifact. If you change the UI, re-record the screenshots, or CI will fail.
 - When you upgrade Kotlin, change both plugin versions in the root `build.gradle` together.
 

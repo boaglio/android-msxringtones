@@ -4,12 +4,17 @@ Use this checklist to update the Play Console for version 2.0 (versionCode 12).
 
 ## 1. Upload the release
 
-Build a signed App Bundle with your upload key, then upload it to **Production → Create new release**. Android Studio can do this with **Build → Generate Signed App Bundle**. From the command line:
+Build the signed App Bundle with the release script, then upload it to **Production → Create new release**:
 
 ```bash
-./gradlew :app:bundleRelease
-# then sign app/build/outputs/bundle/release/app-release.aab with your upload key (jarsigner or apksigner)
+cp release.env.example release.env   # once: fill in the SDK path and your signing key (git ignores release.env)
+tools/android-release.sh
+# → release/MSXRingtones-<version>-<versionCode>.aab
 ```
+
+The script runs the unit tests and lint, builds the bundle and checks that it is signed with your key. Use the upload key if the app is enrolled in Play App Signing (**Test and release → App integrity**), otherwise the app's original 1.x key (SHA1 `29:03:9E:B7:31:D0:83:6D:28:63:F1:CC:A0:17:EC:4E:8E:93:F2:15`). Set `ANDROID_EXPECTED_SHA1` in `release.env` and the script refuses any other key.
+
+The original key is 1024-bit RSA. Google Play still accepts it for this app, and the script only warns about it. To move to a stronger key, enroll in Play App Signing in **App integrity**, then request an upload key upgrade there and sign later releases with the new 2048-bit key. Keep the old keystore backed up, because it can't be recovered. Bump `versionCode` in `app/build.gradle` before every upload: Google Play rejects a versionCode it has already seen.
 
 ### Release notes (en-US)
 

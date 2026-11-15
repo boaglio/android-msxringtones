@@ -77,3 +77,9 @@ nbproject/
 
 # Android SDK location (machine-specific)
 local.properties
+
+# Release signing (see release.env.example and tools/android-release.sh)
+release.env
+*.jks
+*.keystore
+release/

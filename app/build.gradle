@@ -21,8 +21,23 @@ android {
         buildConfig = true
     }
 
+    // Assinatura do release para o Google Play: tools/android-release.sh lê release.env e
+    // exporta estas variáveis. Sem elas (CI, máquina de dev) o release sai sem assinatura.
+    def keystore = System.getenv('ANDROID_KEYSTORE_FILE')
+    signingConfigs {
+        if (keystore) {
+            release {
+                storeFile = file(keystore)
+                storePassword = System.getenv('ANDROID_KEYSTORE_PASSWORD')
+                keyAlias = System.getenv('ANDROID_KEY_ALIAS')
+                keyPassword = System.getenv('ANDROID_KEY_PASSWORD')
+            }
+        }
+    }
+
     buildTypes {
         release {
+            if (keystore) signingConfig = signingConfigs.release
             minifyEnabled = true
             shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
