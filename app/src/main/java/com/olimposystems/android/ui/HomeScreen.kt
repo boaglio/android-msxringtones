@@ -71,13 +71,13 @@ private fun CartaoMaquina(maquina: Maquina, onClick: () -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(12.dp),
         ) {
-            // Pixel art: escala sem borrar.
+            // Os logos são desenhos com antisserrilhado, não pixel art: escala suave.
             Image(
                 bitmap = ImageBitmap.imageResource(maquina.logo),
                 contentDescription = null,
                 modifier = Modifier.fillMaxWidth(0.75f),
                 contentScale = ContentScale.FillWidth,
-                filterQuality = FilterQuality.None,
+                filterQuality = FilterQuality.High,
             )
             Text(stringResource(maquina.titulo), style = MaterialTheme.typography.titleLarge)
         }

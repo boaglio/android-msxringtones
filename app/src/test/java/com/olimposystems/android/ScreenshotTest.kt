@@ -64,6 +64,10 @@ class ScreenshotTest {
     fun inicio() = captura("home") { HomeScreen(onMaquina = {}, onSobre = {}) }
 
     @Test
+    @Config(qualifiers = "+night")
+    fun inicioEscuro() = captura("home-dark") { HomeScreen(onMaquina = {}, onSobre = {}) }
+
+    @Test
     fun msx1() {
         defineComoPadrao(MsxGame.ANTARTIC_ADVENTURE, TipoToque.TOQUE, TipoToque.ALARME)
         captura("msx1") { Lista(Maquina.MSX1) }

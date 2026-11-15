@@ -46,6 +46,7 @@ The app collects no data and has no Internet permission. See the [privacy policy
 
 <p>
   <img src="screenshots/home.png" width="200" alt="Home screen">
+  <img src="screenshots/home-dark.png" width="200" alt="Home screen, dark theme">
   <img src="screenshots/msx1.png" width="200" alt="MSX1 games">
   <img src="screenshots/msx2-dark.png" width="200" alt="MSX2 games, dark theme">
   <img src="screenshots/about.png" width="200" alt="About screen">
