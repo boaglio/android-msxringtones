@@ -16,19 +16,17 @@ The script runs the unit tests and lint, builds the bundle and checks that it is
 
 The original key is 1024-bit RSA. Google Play still accepts it for this app, and the script only warns about it. To move to a stronger key, enroll in Play App Signing in **App integrity**, then request an upload key upgrade there and sign later releases with the new 2048-bit key. Keep the old keystore backed up, because it can't be recovered. Bump `versionCode` in `app/build.gradle` before every upload: Google Play rejects a versionCode it has already seen.
 
-### Release notes (en-US)
+### Release notes (en-US, Google Play limit: 500 characters)
 
 ```
-Version 2.0 — a complete rewrite
-• New Material 3 design, with Material You colors and dark theme
-• Works on tablets and foldables, in portrait and landscape
-• Set any soundtrack as ringtone, notification sound or alarm
-• See which games you are using, and a progress bar while a track plays
-• No special permission required: set sounds automatically or pick them in Sound settings
+Version 2.0, a complete rewrite
 • New games: Knightmare, The Maze of Galious, Nemesis 3 and Space Manbow
-• Knightmare and Nemesis 3 have short jingles for notifications
-• Gradius 2 and Salamander can now be set as ringtones
-• Setting a ringtone works on the latest Android versions
+• Set any soundtrack as ringtone, notification or alarm
+• Short jingles for notifications (Knightmare, Nemesis 3)
+• Badges show which games you use, plus a progress bar
+• New Material 3 design with dark theme
+• Works on tablets and foldables
+• Works on the latest Android versions
 • New app icon
 ```
 
