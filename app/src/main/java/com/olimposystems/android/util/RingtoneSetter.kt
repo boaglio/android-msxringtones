@@ -11,6 +11,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
+import androidx.annotation.RawRes
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.core.content.edit
@@ -54,13 +55,14 @@ object RingtoneSetter {
             return Resultado.PrecisaPermissaoArmazenamento
         }
 
-        val nomeArquivo = context.resources.getResourceEntryName(game.arquivoId) + ".ogg"
+        val audioId = game.audioPara(tipo)
+        val nomeArquivo = context.resources.getResourceEntryName(audioId) + ".ogg"
         return withContext(Dispatchers.IO) {
             try {
                 val uri = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-                    salvaMediaStore(context, game, tipo, nomeArquivo)
+                    salvaMediaStore(context, game, tipo, audioId, nomeArquivo)
                 } else {
-                    salvaLegado(context, game, tipo, nomeArquivo)
+                    salvaLegado(context, game, tipo, audioId, nomeArquivo)
                 }
                 Log.i(TAG, "${tipo.name} salvo: $uri")
                 lembra(context, tipo, game, uri)
@@ -123,7 +125,9 @@ object RingtoneSetter {
 
     /** Android 10+: grava via MediaStore na pasta do tipo, sem permissão de armazenamento. */
     @RequiresApi(Build.VERSION_CODES.Q)
-    private fun salvaMediaStore(context: Context, game: MsxGame, tipo: TipoToque, nomeArquivo: String): Uri {
+    private fun salvaMediaStore(
+        context: Context, game: MsxGame, tipo: TipoToque, @RawRes audioId: Int, nomeArquivo: String,
+    ): Uri {
         val resolver = context.contentResolver
         val colecao = MediaStore.Audio.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY)
         val caminhoRelativo = tipo.pasta + "/"
@@ -154,7 +158,7 @@ object RingtoneSetter {
             ?: throw IOException("MediaStore insert falhou para $nomeArquivo")
 
         try {
-            context.resources.openRawResource(game.arquivoId).use { entrada ->
+            context.resources.openRawResource(audioId).use { entrada ->
                 val saida = resolver.openOutputStream(uri) ?: throw IOException("Não foi possível abrir $uri")
                 saida.use { entrada.copyTo(it) }
             }
@@ -169,12 +173,14 @@ object RingtoneSetter {
 
     /** Android 6–9: grava o arquivo diretamente e registra pelo caminho (coluna DATA). */
     @Suppress("DEPRECATION")
-    private fun salvaLegado(context: Context, game: MsxGame, tipo: TipoToque, nomeArquivo: String): Uri {
+    private fun salvaLegado(
+        context: Context, game: MsxGame, tipo: TipoToque, @RawRes audioId: Int, nomeArquivo: String,
+    ): Uri {
         val pasta = Environment.getExternalStoragePublicDirectory(tipo.pasta)
         if (!pasta.exists() && !pasta.mkdirs()) throw IOException("Não foi possível criar $pasta")
         val arquivo = File(pasta, nomeArquivo)
 
-        context.resources.openRawResource(game.arquivoId).use { entrada ->
+        context.resources.openRawResource(audioId).use { entrada ->
             FileOutputStream(arquivo).use { entrada.copyTo(it) }
         }
 

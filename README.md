@@ -3,7 +3,7 @@ android-msxringtones
 
 Aplicação para Android - MSX Ringtones
 
-**MSX Ringtones** is an Android app for listening to soundtracks from classic MSX1 and MSX2 games and setting one as your phone's ringtone. *PSG and FM-PAC for your ears.*
+**MSX Ringtones** is an Android app for listening to soundtracks from classic MSX1 and MSX2 games and setting one as your phone's ringtone. *PSG, SCC and FM-PAC for your ears.*
 
 ## Games
 
@@ -13,11 +13,16 @@ Aplicação para Android - MSX Ringtones
 | Goonies | Fire Hawk |
 | Guardic | Fray |
 | King's Valley | Golvellius |
-| Gradius 2 | Metal Gear |
-| Pac-Mania | SD Snatcher |
-| Pippols | Treasure of USAS |
+| Knightmare 🔔 | Metal Gear |
+| The Maze of Galious | SD Snatcher |
+| Gradius 2 | Space Manbow |
+| Nemesis 3: The Eve of Destruction 🔔 | Treasure of USAS |
+| Pac-Mania | |
+| Pippols | |
 | Salamander | |
 | Zanac | |
+
+🔔 These games have a short jingle that is used when you set them as a notification sound.
 
 ## Features
 

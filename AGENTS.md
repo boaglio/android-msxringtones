@@ -44,7 +44,8 @@ Guidance for AI coding agents working in this repository.
 app/src/main/java/com/olimposystems/android/
 ├── MSXringtonesActivity.kt   # Only activity: splash screen, edge-to-edge, setContent { MsxTheme { MsxApp() } }.
 │                             # The class name is kept from 1.x so existing launcher shortcuts keep working.
-├── MsxGame.kt                # enum Maquina (MSX1/MSX2) + enum MsxGame (name, machine, R.raw, R.drawable)
+├── MsxGame.kt                # enum Maquina (MSX1/MSX2) + enum MsxGame (name, machine, R.raw, R.drawable,
+│                             # optional short notification R.raw). audioPara(tipo) picks the file to save
 ├── audio/RingtonePlayer.kt   # One MediaPlayer at a time, with audio focus. `tocando` is Compose state
 ├── util/TipoToque.kt         # enum TOQUE / NOTIFICACAO / ALARME: RingtoneManager type, folder, MediaStore flag, labels
 ├── util/RingtoneSetter.kt    # suspend define(game, tipo): saves .ogg to Ringtones/, Notifications/ or Alarms/
@@ -80,15 +81,18 @@ app/src/main/res/
      - `PrecisaPermissaoArmazenamento` (API 23-28 only): request `WRITE_EXTERNAL_STORAGE`, then retry.
      - `Erro`: show a snackbar.
    - Badges on each card come from `RingtoneSetter.atuais()`. It compares each type's current system default with the last file the app saved for that type, which is kept in SharedPreferences `toques`. It's refreshed on `ON_RESUME`, so a sound the user picked manually in Sound settings also gets a badge.
-3. The file is named after the raw resource (`<entry>.ogg`) and saved in the folder for its type (`Ringtones/`, `Notifications/` or `Alarms/`).
+3. The file is named after the raw resource it comes from, `game.audioPara(tipo)` (`<entry>.ogg`), and saved in the folder for its type (`Ringtones/`, `Notifications/` or `Alarms/`).
 
 ## Adding a new game ringtone
 
 1. Add the audio file as `app/src/main/res/raw/<name>.ogg`. Use lowercase letters, digits and underscores only.
 2. Add the title-screen image to `app/src/main/res/drawable-hdpi/`.
 3. Add one constant to `MsxGame` in `MsxGame.kt`, with the display name, `Maquina`, `R.raw.<name>` and `R.drawable.<image>`.
+4. Optional: add a short jingle (a few seconds) as `res/raw/<name>_notificacao.ogg` and pass it as the fifth argument, `notificacaoId`. **Set as… → Notification** then saves the jingle instead of the full track. Ringtone, alarm and in-app playback always use the full track.
 
 You don't need to change anything else: the list, playback and ringtone code all read from the enum. Update the game counts in `MsxGameTest`.
+
+Audio conventions: Ogg Vorbis, 44.1 kHz stereo (`ffmpeg ... -ar 44100 -ac 2 -c:a libvorbis -q:a 5`). Trim leading silence. Keep tracks under about 75 s, cutting long ones to around 45 s with a 3 s fade-out. Title screens are 256×212 PNGs (the MSX2 screen size); pad shorter crops with black rather than stretching them.
 
 ## Known issues and gotchas
 

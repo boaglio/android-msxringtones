@@ -20,6 +20,8 @@ Version 2.0 — a complete rewrite
 • Set any soundtrack as ringtone, notification sound or alarm
 • See which games you are using, and a progress bar while a track plays
 • No special permission required: set sounds automatically or pick them in Sound settings
+• New games: Knightmare, The Maze of Galious, Nemesis 3 and Space Manbow
+• Knightmare and Nemesis 3 have short jingles for notifications
 • Gradius 2 and Salamander can now be set as ringtones
 • Setting a ringtone works on the latest Android versions
 • New app icon
@@ -59,12 +61,12 @@ Classic MSX1 and MSX2 game soundtracks as your phone ringtone.
 ## Full description
 
 ```
-PSG and FM-PAC for your ears!
+PSG, SCC and FM-PAC for your ears!
 
 MSX Ringtones brings the soundtracks of classic MSX1 and MSX2 games to your phone. Listen to any of them and set your favorites as your ringtone, notification sound or alarm.
 
-MSX1: Antarctic Adventure, Goonies, Guardic, King's Valley, Gradius 2, Pac-Mania, Pippols, Salamander, Zanac.
-MSX2: Aleste 2, Fire Hawk, Fray, Golvellius, Metal Gear, SD Snatcher, Treasure of USAS.
+MSX1: Antarctic Adventure, Goonies, Guardic, King's Valley, Knightmare, The Maze of Galious, Gradius 2, Nemesis 3: The Eve of Destruction, Pac-Mania, Pippols, Salamander, Zanac.
+MSX2: Aleste 2, Fire Hawk, Fray, Golvellius, Metal Gear, SD Snatcher, Space Manbow, Treasure of USAS.
 
 • Material 3 design with Material You colors and dark theme
 • Works on phones, tablets and foldables
