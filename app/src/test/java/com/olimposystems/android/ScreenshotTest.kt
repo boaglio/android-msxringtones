@@ -23,7 +23,8 @@ import org.robolectric.annotation.Config
 import org.robolectric.annotation.GraphicsMode
 
 /**
- * Gera as capturas de tela do README em ../screenshots, sem aparelho:
+ * Gera as capturas de tela do README em ../screenshots e as do Google Play em ../play/screenshots,
+ * sem aparelho:
  *   ./gradlew :app:recordRoborazziDebug
  * Em testDebugUnitTest normal as telas são só renderizadas (nada é gravado).
  */
@@ -38,8 +39,8 @@ class ScreenshotTest {
         compareOptions = RoborazziOptions.CompareOptions(changeThreshold = 0.01f),
     )
 
-    private fun captura(nome: String, tela: @Composable () -> Unit) =
-        captureRoboImage("../screenshots/$nome.png", roborazziOptions = opcoes) {
+    private fun captura(nome: String, pasta: String = "../screenshots", tela: @Composable () -> Unit) =
+        captureRoboImage("$pasta/$nome.png", roborazziOptions = opcoes) {
             MsxTheme(corDinamica = false) { tela() }
         }
 
@@ -83,7 +84,39 @@ class ScreenshotTest {
     @Test
     @Config(qualifiers = TABLET)
     fun tablet() = captura("tablet-msx1") { Lista(Maquina.MSX1) }
+
+    // Google Play: telefone em 9:16 (o Play recusa lado maior > 2x o menor) e tablet em alta resolução.
+
+    @Test
+    @Config(qualifiers = PLAY_TELEFONE)
+    fun play1Inicio() = captura("1-home", PLAY) { HomeScreen(onMaquina = {}, onSobre = {}) }
+
+    @Test
+    @Config(qualifiers = PLAY_TELEFONE)
+    fun play2Msx1() {
+        defineComoPadrao(MsxGame.ANTARTIC_ADVENTURE, TipoToque.TOQUE, TipoToque.ALARME)
+        captura("2-msx1", PLAY) { Lista(Maquina.MSX1) }
+    }
+
+    @Test
+    @Config(qualifiers = PLAY_TELEFONE_ESCURO)
+    fun play3Msx2Escuro() = captura("3-msx2-dark", PLAY) { Lista(Maquina.MSX2) }
+
+    @Test
+    @Config(qualifiers = PLAY_TELEFONE)
+    fun play4Sobre() = captura("4-about", PLAY) { AboutScreen(onVoltar = {}) }
+
+    @Test
+    @Config(qualifiers = PLAY_TABLET)
+    fun play5Tablet() {
+        defineComoPadrao(MsxGame.ANTARTIC_ADVENTURE, TipoToque.TOQUE, TipoToque.ALARME)
+        captura("5-tablet-msx1", PLAY) { Lista(Maquina.MSX1) }
+    }
 }
 
 private const val TELEFONE = "w411dp-h891dp-port-xxhdpi"
 private const val TABLET = "w1280dp-h800dp-land-mdpi"
+private const val PLAY = "../play/screenshots"
+private const val PLAY_TELEFONE = "w411dp-h731dp-port-xxhdpi" // 1233 x 2193 px, 9:16
+private const val PLAY_TELEFONE_ESCURO = "w411dp-h731dp-port-night-xxhdpi"
+private const val PLAY_TABLET = "w1280dp-h800dp-land-xhdpi" // 2560 x 1600 px

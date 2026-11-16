@@ -10,7 +10,7 @@ Guidance for AI coding agents working in this repository.
 - The app has a single activity, `MSXringtonesActivity`. Screens are composables, and navigation is a simple screen stack in `ui/MsxApp.kt`, so there is no Navigation library.
 - Single Gradle module: `:app`.
 - Tests: `app/src/test/` (JUnit 4, JVM-only). Run them with `./gradlew :app:testDebugUnitTest`. `ScreenshotTest` renders the real screens with Robolectric and Roborazzi, and the first run downloads a roughly 200 MB Robolectric Android runtime.
-- After any UI change, run `./gradlew :app:recordRoborazziDebug`. It rewrites the README images in `screenshots/` (home, home-dark, msx1, msx2-dark, about, tablet-msx1), and the regenerated images must be committed with the change.
+- After any UI change, run `./gradlew :app:recordRoborazziDebug`. It rewrites the README images in `screenshots/` (home, home-dark, msx1, msx2-dark, about, tablet-msx1) and the Google Play images in `play/screenshots/` (9:16 phone, 2560×1600 tablet), and the regenerated images must be committed with the change.
 - Code identifiers, log messages and comments are mostly in **Portuguese**. For example: `nome` means "name", `arquivoId` means "file id", `maquina` means "machine", `tela` means "screen", `sobre` means "about", `voltar` means "back", `tocando` means "playing", and `define` means "set". User-facing strings are in English only, in `res/values/strings.xml`. Keep that split, and don't add translations.
 
 ## Build
@@ -115,7 +115,7 @@ Audio conventions: Ogg Vorbis, 44.1 kHz stereo (`ffmpeg -i in.mp3 -map 0:a:0 -vn
 - Logging uses `android.util.Log` with short tags (`msx player`, `msx ringtone`).
 - When releasing, bump `versionCode` and `versionName` in `app/build.gradle`.
 - Don't commit APKs, `build/` outputs or signing keys.
-- `play/` holds Play Store material: `icon-512.png` and `LISTING.md`, which has the release notes, Data safety answers and descriptions.
+- `play/` holds Play Store material: `icon-512.png`, `feature-graphic.png` (from `tools/generate_feature_graphic.py`, pixel blocks only, no system fonts), `screenshots/`, and `LISTING.md`, which has the release notes, Data safety answers and descriptions. Release notes must stay under 500 characters.
 - `PRIVACY.md` is the app's privacy policy, linked from the About screen and from Google Play. If you add a permission, a network call or any data collection, update it in the same change.
 
 ## Verifying changes

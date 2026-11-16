@@ -32,8 +32,13 @@ Version 2.0, a complete rewrite
 
 ## 2. Store listing → Graphics
 
-- **App icon (512×512):** `play/icon-512.png`
-- **Phone screenshots:** take new ones on a phone running 2.0. The current ones show the 1.x design.
+- **App icon (512×512):** `play/icon-512.png`, made by `tools/generate_icon.py`.
+- **Feature graphic (1024×500):** `play/feature-graphic.png`, made by `python3 tools/generate_feature_graphic.py play/feature-graphic.png`.
+- **Phone screenshots:** `play/screenshots/1-home.png` to `4-about.png` (1233×2193, 9:16). Play rejects images whose long side is more than twice the short side, so the README screenshots in `screenshots/` can't be used here.
+- **7-inch and 10-inch tablet screenshots:** `play/screenshots/5-tablet-msx1.png` (2560×1600).
+- **Video, Chromebook, Android XR:** leave empty.
+
+All screenshots come from `ScreenshotTest`: `./gradlew :app:recordRoborazziDebug` rewrites them along with the README ones.
 
 ## 3. App content → Privacy policy
 
@@ -58,20 +63,36 @@ Result shown on Play: **"No data collected · No data shared with third parties"
 ## Short description (80 characters max)
 
 ```
-Classic MSX1 and MSX2 game soundtracks as your phone ringtone.
+Music from classic MSX games as your ringtone, notification sound or alarm.
 ```
 
 ## Full description
 
+Google rejected the 1.x one-line description ("does not clearly describe the app's features"). Keep this one descriptive: say what MSX is and what the app does, and don't repeat keywords.
+
 ```
-PSG, SCC and FM-PAC for your ears!
+Bring the sound of the MSX home computers to your phone.
 
-MSX Ringtones brings the soundtracks of classic MSX1 and MSX2 games to your phone. Listen to any of them and set your favorites as your ringtone, notification sound or alarm.
+The MSX was a home computer standard of the 1980s, famous for games by Konami, Compile and others. Its sound chips (PSG, Konami's SCC and the FM-PAC) gave these games some of the most memorable music of the era. MSX Ringtones collects short pieces of that music so you can listen to them and use them on your phone.
 
-MSX1: Antarctic Adventure, Goonies, Guardic, King's Valley, Knightmare, The Maze of Galious, Gradius 2, Nemesis 3: The Eve of Destruction, Pac-Mania, Pippols, Salamander, Zanac.
-MSX2: Aleste 2, Fire Hawk, Fray, Golvellius, Metal Gear, SD Snatcher, Space Manbow, Treasure of USAS.
+What you can do
+• Listen to each soundtrack, with a progress bar while it plays
+• Set any soundtrack as your ringtone, notification sound or alarm
+• Use short jingles as notification sounds (Knightmare and Nemesis 3)
+• See at a glance which games you are using: each game shows a badge for the sounds it is set as
 
-• Material 3 design with Material You colors and dark theme
-• Works on phones, tablets and foldables
-• No ads, no tracking, no data collected, no Internet permission
+How setting a sound works
+Tap "Set as…" and choose Ringtone, Notification or Alarm. The sound is saved on your phone. If you allow the app to modify system settings, it sets the sound for you in one tap. If you prefer not to, the app opens Android's Sound settings, where you can pick the new sound yourself.
+
+Games included
+MSX1: Antarctic Adventure, Goonies, Guardic, King's Valley, Knightmare, The Maze of Galious, Gradius 2, Nemesis 3: The Eve of Destruction, Pac-Mania, Pippols, Salamander and Zanac.
+MSX2: Aleste 2, Fire Hawk, Fray, Golvellius, Metal Gear, SD Snatcher, Space Manbow and Treasure of USAS.
+
+Design
+• Material 3 design, with Material You colors on Android 12 and newer
+• Light and dark themes
+• Works on phones, tablets and foldables, in portrait and landscape
+
+Privacy
+No ads, no tracking and no data collected. The app does not use the Internet.
 ```
